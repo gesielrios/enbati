@@ -1,9 +1,9 @@
-== Bem Vindo ao ENBATI
+== Bem Vindo ao Projeto ENBATI
 
 Site do II Encontro Bacabalense de Tecnologia da Informação,
 idealizado e organizado por professores e alunos do CST de 
 Sistemas para Internet da Faculdade de Educação de Bacabal.
 
-Desenvolvida por:
+Desenvolvido por:
 Gesiel Rios
 @gesielrios
