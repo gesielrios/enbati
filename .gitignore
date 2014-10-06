@@ -17,4 +17,4 @@
 .DS_Store
 .rvmrc
 config/database.yml
-db/seeds.rb
+/db/seeds.rb
