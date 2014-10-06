@@ -1,0 +1,30 @@
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h1>Contatos</h1>
+</div>
+<table class="table table-striped">
+  	<thead>
+    	<tr>
+      		<th>Nome</th>
+      		<th>Email</th>
+			<th>Assunto</th>
+      		<th>Criado em</th>
+      		<th>Ações</th>
+    	</tr>
+  	</thead>
+  	<tbody>
+    	<% @contacts.each do |contact| %>
+      		<tr>
+        		<td><%= contact.name %></td>
+        		<td><%= contact.email %></td>
+				<td><%= contact.subject %></td>
+        		<td><%=l contact.created_at %></td>
+        		<td>
+          			<%= link_to "Visualizar",
+						admin_contact_path(contact), 
+						:class => 'btn btn-primary btn-xs' %>
+        		</td>
+      		</tr>
+    	<% end %>
+  	</tbody>
+</table>

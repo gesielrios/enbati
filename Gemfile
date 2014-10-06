@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem 'devise'
 
 group :development, :test do
   gem 'factory_girl_rails'

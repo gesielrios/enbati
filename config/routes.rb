@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
+  
   root 'home#index'
 
   resources :contacts, only: [:new, :create]
+  
+  scope '/admin' do
+    devise_for :users, :controllers => {
+      :sessions => "admin/sessions",
+      :passwords => "admin/passwords"
+    }
+  end
+
+  namespace :admin do
+    root :to => 'home#index'
+    resources :users, :except => [:delete]
+    resources :contacts, :except => [:new, :create, :edit, :update, :delete]
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

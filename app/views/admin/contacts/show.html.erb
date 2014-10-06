@@ -1,0 +1,19 @@
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h1>Contato</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Nome:</strong></dt>
+  <dd><%= @contact.name %></dd>
+  <dt><strong>Email:</strong></dt>
+  <dd><%= @contact.email %></dd>
+  <dt><strong>Assunto:</strong></dt>
+  <dd><%= @contact.subject %></dd>
+  <dt><strong>Mensagem:</strong></dt>
+  <dd><%= @contact.message %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_contacts_path, :class => 'btn btn-default'  %>
+

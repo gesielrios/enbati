@@ -35,29 +35,49 @@
     	<%= favicon_link_tag 'ico-enbati.png', :rel => 'shortcut icon' %>
 
     	<%= javascript_include_tag "application" %>
-  </head>
-  <body>
-
-	<div role="navigation" class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<%= link_to image_tag("logo-enbati-nav.png"), root_path, :class => "navbar-brand" %>
-			</div>
-			
-	        <div class="navbar-collapse collapse">
-	          	<ul class="nav navbar-nav navbar-right menu-nav">
-					<li><%= link_to "O Evento", "#oevento" %></li>
-					<li><%= link_to "Programação", "#programacao" %></li>
-					<li><%= link_to "Palestrantes", "#palestrantes" %></li>
-					<li><%= link_to "Inscrições", "http://inforgeneses.com.br/eventos/inscricao_semana/index.php?ei=K7mPg-V&evi=LQ5dT0nAtH-TDggWp2L5iHba6zIPAPTEVky7aJ5OWhe_2q7o3tCiHba6zIPAPTEVky7aJ5OWhe_2q7o3tC", :target => "_blank" %></li>
-					<li><%= link_to "Portal do Participante", "http://inforgeneses.com.br/eventos/portal/login.php?ei=K7mPg-V", :target => "_blank" %></li>
-					<li><%= link_to "Contato", new_contact_path %></li>
-				</ul>	
-	        </div>
-	      </div>
-	    </div>
-
-
+  	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+		    	<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        		<span class="sr-only">Toggle navigation</span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		        		<span class="icon-bar"></span>
+		      		</button>
+		      		<a class="navbar-brand" href="#">ENBATI#Admin</a>
+		    	</div>
+				<div class="container">
+		    		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<% if user_signed_in? %>
+		      				<ul class="nav navbar-nav">
+		        				<li><%= link_to "Usuários", admin_users_path  %></li>
+								<li><%= link_to "Contatos", admin_contacts_path  %></li>
+		      				</ul>
+		      				<div class="nav navbar-nav navbar-right">
+		        				<div class="dropdown">
+		          					<button type="button" data-toggle="dropdown" class="dropdown-toggle btn btn-default navbar-btn"><span class="glyphicon glyphicon-user"></span><span class="caret"></span></button>
+		          					<ul class="dropdown-menu" role="menu">
+		            					<li><a href="#"><span class="glyphicon glyphicon-home"></span> <strong><%= current_user.name %></strong></a></li>
+										<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></a></li>
+										<li class="divider"></li>
+										<li>
+											<%= link_to edit_admin_user_path(current_user) do %>
+												<span class='glyphicon glyphicon-pencil'></span> Editar
+											<% end %>
+										</li>
+										<li class="divider"></li>
+							    		<li><%= link_to "Sair", destroy_user_session_path, :method => "delete" %></li>
+		          					</ul>
+		        				</div>
+		      				</div>
+		    			<% end %>
+					</div>
+				</div>
+		  	</div>
+		</nav>
+		
 		<div class="jumbotron">
 			<div class="container-fluid">
 				<div class="col-md-6 col-md-offset-3">
@@ -81,6 +101,5 @@
 		<footer class="text-center">
 			<p>Copyright &copy; <%= Time.current.year %> FEBAC - Faculdade de Educação de Bacabal. Todos os direitos reservados.</p>
 		</footer>
-	</div>
-</body>
+	</body>
 </html>

@@ -25,7 +25,7 @@
   <div class="form-group">
     <%= f.label :email, "Email", :class => "col-sm-2 control-label" %>
 	<div class="col-sm-10">
-		<%= f.text_field :email, :class => 'form-control', :placeholder => "exemplo@exemplo.com", :required => "required" %>
+		<%= f.email_field :email, :class => 'form-control', :placeholder => "exemplo@exemplo.com", :required => "required" %>
 	</div>
  	<%= error_span(@contact[:email]) %>
   </div>
@@ -43,9 +43,11 @@
 	</div>
    	<%= error_span(@contact[:message]) %>
   </div>
-
-
-  <%= f.submit "Enviar", :class => 'btn btn-primary' %>
-  <%= link_to "Cancelar", root_path, :class => 'btn btn-default' %>
+  	<div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+  			<%= f.submit "Enviar", :class => 'btn btn-primary' %>
+  			<%= link_to "Cancelar", root_path, :class => 'btn btn-default' %>
+		</div>
+	</div>
 
 <% end %>
