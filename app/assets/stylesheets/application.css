@@ -17,3 +17,14 @@
 .padding {
 	padding-top: 45px;
 }
+
+.speakers img {
+	border-radius: 150px;
+	height: 120px;
+	width: 120px;
+}
+
+.sponsors img {
+	margin: 15px;
+}
+

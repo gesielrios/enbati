@@ -40,12 +40,17 @@
 
 	<div role="navigation" class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
+			<div class="navbar-header">
+				<%= link_to image_tag("logo-enbati-nav.png"), root_path, :class => "navbar-brand" %>
+			</div>
 			
 	        <div class="navbar-collapse collapse">
 	          	<ul class="nav navbar-nav navbar-right menu-nav">
-					<li><%= link_to "O Evento", "#" %></li>
-					<li><%= link_to "Programação", "#" %></li>
-					<li><%= link_to "Palestrantes", "#" %></li>
+					<li><%= link_to "O Evento", "#oevento" %></li>
+					<li><%= link_to "Programação", "#programacao" %></li>
+					<li><%= link_to "Palestrantes", "#palestrantes" %></li>
+					<li><%= link_to "Inscrições", "http://inforgeneses.com.br/eventos/inscricao_semana/index.php?ei=K7mPg-V&evi=LQ5dT0nAtH-TDggWp2L5iHba6zIPAPTEVky7aJ5OWhe_2q7o3tCiHba6zIPAPTEVky7aJ5OWhe_2q7o3tC", :target => "_blank" %></li>
+					<li><%= link_to "Portal do Participante", "http://inforgeneses.com.br/eventos/portal/login.php?ei=K7mPg-V", :target => "_blank" %></li>
 					<li><%= link_to "Contato", new_contact_path %></li>
 				</ul>	
 	        </div>
@@ -56,13 +61,19 @@
 		<div class="jumbotron">
 			<div class="container-fluid">
 				<div class="col-md-6 col-md-offset-3">
-					<%= image_tag("logo-enbati.png",:class => "img-responsive padding") %>
+					<h1>
+						<%= image_tag("logo-enbati.png",:class => "img-responsive padding") %>
+					</h1>
 				</div>
 			</div>
 		</div>
 	
 		<div class="container">
-			<%= yield %>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+			  		<%= yield %>
+			  	</div>
+			</div>
 		</div>
 
 		<hr>

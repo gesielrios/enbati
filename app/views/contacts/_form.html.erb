@@ -3,7 +3,7 @@
     <% if @contact.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@contact.errors.count, "error") %> impediu(ram) o contato ser salvo:</h3>
       </div>
       <div class="panel-body">
         <ul>
@@ -18,28 +18,28 @@
   <div class="form-group">
     <%= f.label :name, "Nome", :class => "col-sm-2 control-label" %>
 	<div class="col-sm-10">
-    	<%= f.text_field :name, :class => 'form-control', :placeholder => "Seu nome" %>
+    	<%= f.text_field :name, :class => 'form-control', :placeholder => "Seu nome", :required => "required" %>
 	</div>
     <%= error_span(@contact[:name]) %>
   </div>
   <div class="form-group">
     <%= f.label :email, "Email", :class => "col-sm-2 control-label" %>
 	<div class="col-sm-10">
-		<%= f.text_field :email, :class => 'form-control', :placeholder => "exemplo@exemplo.com" %>
+		<%= f.text_field :email, :class => 'form-control', :placeholder => "exemplo@exemplo.com", :required => "required" %>
 	</div>
  	<%= error_span(@contact[:email]) %>
   </div>
   <div class="form-group">
     <%= f.label :subject, "Assunto", :class => "col-sm-2 control-label" %>
 	<div class="col-sm-10">
-		<%= f.text_field :subject, :class => 'form-control', :placeholder => "Seu título" %>
+		<%= f.text_field :subject, :class => 'form-control', :placeholder => "Seu título", :required => "required" %>
 	</div>
    	<%= error_span(@contact[:subject]) %>
   </div>
   <div class="form-group">
     <%= f.label :message, "Mensagem", :class => "col-sm-2 control-label" %>
 	<div class="col-sm-10">
-		<%= f.text_area :message, :class => 'form-control', :rows => 5, :placeholder => "Fale conosco" %>
+		<%= f.text_area :message, :class => 'form-control', :rows => 5, :placeholder => "Fale conosco", :required => "required" %>
 	</div>
    	<%= error_span(@contact[:message]) %>
   </div>
