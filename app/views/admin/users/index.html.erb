@@ -16,7 +16,7 @@
       		<tr>
         		<td><%= user.name %></td>
         		<td><%= user.email %></td>
-        		<td><%=l user.created_at %></td>
+        		<td><%=l user.created_at, :format => "%d/%m/%Y" %></td>
         		<td>
           			<%= link_to "Visualizar",
 						admin_user_path(user), 

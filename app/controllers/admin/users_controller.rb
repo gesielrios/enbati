@@ -31,6 +31,7 @@ class Admin::UsersController < Admin::AdminController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        sign_in(@user, :bypass => true)
         format.html { redirect_to admin_users_path, notice: 'Usuário atualizado com sucesso.' }
       else
         format.html { render :edit }

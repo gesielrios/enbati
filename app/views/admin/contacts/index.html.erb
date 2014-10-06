@@ -18,7 +18,7 @@
         		<td><%= contact.name %></td>
         		<td><%= contact.email %></td>
 				<td><%= contact.subject %></td>
-        		<td><%=l contact.created_at %></td>
+        		<td><%=l contact.created_at, :format => "%d/%m/%Y" %></td>
         		<td>
           			<%= link_to "Visualizar",
 						admin_contact_path(contact), 
