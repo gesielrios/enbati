@@ -32,6 +32,7 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'devise'
+gem "heroku"
 
 group :development, :test do
   gem 'factory_girl_rails'
