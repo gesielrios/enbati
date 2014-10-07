@@ -28,3 +28,9 @@
 	margin: 15px;
 }
 
+.sponsors ul {
+	display: -moz-inline-box;
+	float: none;
+	list-style: none outside none;
+}
+
